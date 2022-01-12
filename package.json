@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "MIT",
   "description": "Lullabot's theme for Architecture Decision Records",
   "author": "Mateu Aguiló Bosch (e0ipso)",
   "keywords": [
