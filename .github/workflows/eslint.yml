@@ -17,7 +17,7 @@ jobs:
       - run: jq -s '[.[][]]' reports/eslint/*.json > reports/eslint/eslint-combined.json
         if: ${{ failure() }}
       - name: Annotate Code Linting Results
-        uses: ataylorme/eslint-annotate-action@1.1.2
+        uses: ataylorme/eslint-annotate-action@1.2.0
         if: ${{ failure() }}
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
