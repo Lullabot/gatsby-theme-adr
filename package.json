@@ -2,6 +2,9 @@
   "name": "@lullabot/gatsby-theme-adr",
   "version": "1.0.0",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Lullabot's theme for Architecture Decision Records",
   "author": "Mateu Aguiló Bosch (e0ipso)",
   "keywords": [
