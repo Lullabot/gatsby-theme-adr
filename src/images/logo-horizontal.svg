@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="349"
+   height="111"
+   viewBox="0 0 349 111"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="logo-horizontal.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient48090">
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="0"
+         id="stop48086" />
+      <stop
+         style="stop-color:#666666;stop-opacity:1"
+         offset="1"
+         id="stop48088" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient47282">
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="0"
+         id="stop47278" />
+      <stop
+         style="stop-color:#666666;stop-opacity:1"
+         offset="1"
+         id="stop47280" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient47282"
+       id="linearGradient47700"
+       gradientUnits="userSpaceOnUse"
+       x1="180.53815"
+       y1="45.85746"
+       x2="180.53815"
+       y2="77.113914"
+       gradientTransform="translate(-0.92857687,-13.377967)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient48090"
+       id="linearGradient48092"
+       x1="62.358517"
+       y1="31.245989"
+       x2="50.941013"
+       y2="79.690445"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.234957"
+     inkscape:cx="169.70859"
+     inkscape:cy="55.642161"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g48498" />
+  <g
+     id="g48498"
+     transform="matrix(1.190715,0,0,1.190715,-0.20231984,-1.9414621)"
+     style="stroke:#ff00ff;stroke-opacity:1">
+    <path
+       sodipodi:type="star"
+       style="fill:url(#linearGradient48092);fill-opacity:1;stroke:#ff00ff;stroke-width:0;stroke-opacity:1"
+       id="path1248"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="58.552681"
+       sodipodi:cy="47.394142"
+       sodipodi:r1="33.181152"
+       sodipodi:r2="16.590576"
+       sodipodi:arg1="0.54561777"
+       sodipodi:arg2="1.1739363"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 86.916158,64.613377 64.965342,62.695286 50.941012,79.690448 45.98205,58.221259 25.484934,50.135122 44.370943,38.784525 l 1.356416,-21.99267 16.631157,14.454134 21.335427,-5.50608 -8.607388,20.283743 z"
+       inkscape:transform-center-x="2.3521333"
+       inkscape:transform-center-y="0.84701073" />
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:32px;line-height:1.25;font-family:'DM Sans';-inkscape-font-specification:'DM Sans Medium';letter-spacing:-3px;fill:url(#linearGradient47700);fill-opacity:1;stroke:#ff00ff;stroke-opacity:1"
+       x="93.880455"
+       y="56.113152"
+       id="text22096"><tspan
+         sodipodi:role="line"
+         id="tspan22094"
+         x="93.880455"
+         y="56.113152"
+         style="fill:url(#linearGradient47700);fill-opacity:1;stroke:#4d4d4d;stroke-opacity:1">My Company</tspan></text>
+  </g>
+</svg>

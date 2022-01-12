@@ -1,0 +1,14 @@
+/public
+/config
+/.cache
+/node_modules
+/.eslintrc.js
+/commitlint.config.js
+/gatsby-browser.js
+/gatsby-config.js
+/gatsby-node.js
+/__gatsby-node.js
+/lint-staged.config.js
+/postcss.config.js
+/release.config.js
+/tailwind.config.js

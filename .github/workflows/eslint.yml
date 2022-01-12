@@ -1,0 +1,30 @@
+name: Run eslint
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+jobs:
+  run-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm install
+      - run: npm test
+      - run: npm run-script lint:ci
+      - run: jq -s '[.[][]]' reports/eslint/*.json > reports/eslint/eslint-combined.json
+        if: ${{ failure() }}
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@1.1.2
+        if: ${{ failure() }}
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          report-json: reports/eslint/eslint-combined.json
+      - name: Upload test artifacts
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: eslint_test_results
+          path: reports/eslint
