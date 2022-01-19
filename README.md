@@ -4,51 +4,98 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Gatsby Theme ADR
 </h1>
 
-## 🚀 Quick start
+## 🚀 Add an ADR website to your software project
 
-1.  **Create a Gatsby site.**
+1. **Create a `/docs` folder in your repository**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+   Create the directory to hold your ADRs, and initialize the website.
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    # Download the boilerplate project so we can tweak it.
+    npx degit github:e0ipso/adr-website-example docs
+    cd docs
+   
+    # Install the documentation site.
+    npm install
+    # Run the development server.
+    npm run-script develop
     ```
 
-3.  **Open the code and start customizing!**
+2. **Change customize the Look & Feel**
 
-    Your site is now running at http://localhost:8000!
+    * This project uses Gatsby. This means that you can override any or the
+      components here using a technique
+      called [component shadowing](https://www.gatsbyjs.com/blog/2019-04-29-component-shadowing/)
+      . The boilerplate you downloaded contains examples of that. See the
+      contents of the `src/@lullabot/gatsby-theme-adr` to change the copyright
+      information the menu title, etc.
 
-    Edit `src/pages/index.jsx` to see your site update in real-time!
+    * Additionally, you will need to change the images in `src/images` to
+      include the logo for your project.
 
-4.  **Learn more**
+    * Finally, edit `gatsby.config.js` to remove references to "My Company" and
+      use your project's info instead.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+3. (Optional) **Move Tugboat integration to your project root**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   If you want to preview your site documentation in
+   your [Tugboat](https://tugboat.qa)
+   previews, you can use the configuration in the `.tugboat` directory.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   If you already use Tugboat adapt your project configuration to _add_ the
+   service for the ADR website instead.
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    ```shell
+    mv .tugboat ../
+    ```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4. **Open the code and start customizing!**
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   Your site is now running at http://localhost:8000!
 
-## 🚀 Quick start (Gatsby Cloud)
+   Edit `src/pages/index.jsx` to see your site update in real-time!
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+## 💠 Deploy and update the site automatically
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Depending on the CI you use and where you publish the ADR site this process will
+differ.
+
+Here is an example that assumes you use _GitHub Actions_ for CI and _
+GitHub Pages_ to host the static site.
+
+Add a workflow for your repository in `.github/worflows/gh-pages.yml` with the
+following contents:
+
+```yaml
+name: website
+
+on:
+  push:
+    # Update this to your branch name.
+    branches: [ main ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install package dependencies
+        run: npm ci
+      - name: Build Gatsby site
+        run: npm run-script build
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs/public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
