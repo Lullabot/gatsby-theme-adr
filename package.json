@@ -54,7 +54,7 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "gatsby": "4.5.3",
+    "gatsby": "4.5.4",
     "gatsby-plugin-feed": "4.5.0",
     "gatsby-plugin-image": "2.5.2",
     "gatsby-plugin-local-search": "2.0.1",
