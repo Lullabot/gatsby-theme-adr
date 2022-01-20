@@ -63,8 +63,7 @@
 Depending on the CI you use and where you publish the ADR site this process will
 differ.
 
-Here is an example that assumes you use _GitHub Actions_ for CI and _
-GitHub Pages_ to host the static site.
+Here is an example that assumes you use _GitHub Actions_ for CI and _GitHub Pages_ to host the static site.
 
 Add a workflow for your repository in `.github/worflows/gh-pages.yml` with the
 following contents:
