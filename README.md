@@ -15,7 +15,7 @@
 
     ```shell
     # Download the boilerplate project so we can tweak it.
-    npx degit github:e0ipso/adr-website-example docs
+    npx degit github:e0ipso/adr-website-example#main docs
     cd docs
    
     # Install the documentation site.
