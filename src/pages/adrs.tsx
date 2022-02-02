@@ -61,8 +61,7 @@ const AdrListing = (props: AdrListingType) => {
                 <div className="block px-4 py-4 sm:px-6 hover:bg-gray-50">
                   <div className="flex items-center justify-between">
                     <Link to={slug}>
-                      <h2
-                        className="text-sm font-semibold text-indigo-600 truncate">
+                      <h2 className="text-sm font-semibold text-indigo-600 truncate">
                         {title}
                       </h2>
                     </Link>

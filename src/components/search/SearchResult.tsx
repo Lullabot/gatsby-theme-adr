@@ -16,8 +16,12 @@ const SearchResult = ({
 }: SearchResultProps): ReactElement => (
   <li className="py-4 flex">
     <div className="ml-3 block">
-      <Link to={slug} className="text-sm"><h3 className="text-sm font-medium text-gray-900">{title}</h3></Link>
-      <div className="text-sm text-gray-500 prose"><ReactMarkdown>{deck}</ReactMarkdown></div>
+      <Link to={slug} className="text-sm">
+        <h3 className="text-sm font-medium text-gray-900">{title}</h3>
+      </Link>
+      <div className="text-sm text-gray-500 prose">
+        <ReactMarkdown>{deck}</ReactMarkdown>
+      </div>
     </div>
   </li>
 );
