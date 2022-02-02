@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { Link } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
 
 export type SearchResultProps = Readonly<{
   title: string;
@@ -14,10 +15,10 @@ const SearchResult = ({
   slug,
 }: SearchResultProps): ReactElement => (
   <li className="py-4 flex">
-    <Link to={slug} className="ml-3 block">
-      <h3 className="text-sm font-medium text-gray-900">{title}</h3>
-      <p className="text-sm text-gray-500">{deck}</p>
-    </Link>
+    <div className="ml-3 block">
+      <Link to={slug} className="text-sm"><h3 className="text-sm font-medium text-gray-900">{title}</h3></Link>
+      <div className="text-sm text-gray-500 prose"><ReactMarkdown>{deck}</ReactMarkdown></div>
+    </div>
   </li>
 );
 

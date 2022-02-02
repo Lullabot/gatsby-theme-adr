@@ -4,6 +4,7 @@ import { CalendarIcon, TagIcon, UsersIcon } from '@heroicons/react/solid';
 import AdrStats from '../components/AdrStats';
 import Layout from '../components/layout/Layout';
 import StatusBadge from '../components/StatusBadge';
+import ReactMarkdown from 'react-markdown';
 
 export type AdrListingData = {
   node: {
@@ -57,14 +58,14 @@ const AdrListing = (props: AdrListingType) => {
               i,
             ) => (
               <li key={i}>
-                <Link
-                  to={slug}
-                  className="block px-4 py-4 sm:px-6 hover:bg-gray-50"
-                >
+                <div className="block px-4 py-4 sm:px-6 hover:bg-gray-50">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-sm font-semibold text-indigo-600 truncate">
-                      {title}
-                    </h2>
+                    <Link to={slug}>
+                      <h2
+                        className="text-sm font-semibold text-indigo-600 truncate">
+                        {title}
+                      </h2>
+                    </Link>
                     <div className="ml-2 flex-shrink-0 flex">
                       <StatusBadge status={status} size="small" />
                     </div>
@@ -111,10 +112,10 @@ const AdrListing = (props: AdrListingType) => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm mt-3 font-serif">
-                    {deck}
-                  </p>
-                </Link>
+                  <div className="text-gray-500 text-sm mt-3 font-serif prose">
+                    <ReactMarkdown>{deck || ''}</ReactMarkdown>
+                  </div>
+                </div>
               </li>
             ),
           )}
