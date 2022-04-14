@@ -17,5 +17,7 @@ commitlint.config.js
 @*/*/__gatsby-node.js
 lint-staged.config.js
 release.config.js
+*/postcss.config.js
+@*/*/postcss.config.js
 */tailwind.config.js
 @*/*/tailwind.config.js
