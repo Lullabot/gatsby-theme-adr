@@ -1,0 +1,47 @@
+{
+  "name": "gatsby-theme-adr-development",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn workspace adr-website-example build",
+    "develop": "yarn workspace adr-website-example develop",
+    "start": "yarn workspace adr-website-example develop",
+    "serve": "yarn workspace adr-website-example serve",
+    "clean": "yarn workspace adr-website-example clean",
+    "lint": "eslint {**/*,*}.{js,ts,jsx,tsx,html}",
+    "lint:fix": "prettier --write \"{**/*,*}.{js,ts,jsx,tsx,json,md}\" && yarn lint --fix",
+    "lint:ci": "yarn lint -- -o reports/eslint/issues.json -f json",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint"
+  },
+  "workspaces": [
+    "@lullabot/gatsby-theme-adr",
+    "adr-website-example"
+  ],
+  "dependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.2",
+    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
+  }
+}

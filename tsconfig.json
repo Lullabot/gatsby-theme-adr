@@ -76,16 +76,29 @@
     "isolatedModules": true,
     "jsx": "react"
   },
-  "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.jsx", "src/**/*.tsx"],
+  "include": [
+    "@*/*/src/**/*.js",
+    "@*/*/src/**/*.ts",
+    "@*/*/src/**/*.jsx",
+    "@*/*/src/**/*.tsx",
+    "*/src/**/*.js",
+    "*/src/**/*.ts",
+    "*/src/**/*.jsx",
+    "*/src/**/*.tsx"
+  ],
   "exclude": [
     "*.svg",
     "*.png",
     "*.css",
     "*.scss",
     "*.sass",
-    "src/**/*.test.ts",
-    "src/**/*.test.js",
-    "src/**/*.spec.ts",
-    "src/**/*.spec.js"
+    "@*/*/src/**/*.test.ts",
+    "@*/*/src/**/*.test.js",
+    "@*/*/src/**/*.spec.ts",
+    "@*/*/src/**/*.spec.js",
+    "*/src/**/*.test.ts",
+    "*/src/**/*.test.js",
+    "*/src/**/*.spec.ts",
+    "*/src/**/*.spec.js"
   ]
 }
