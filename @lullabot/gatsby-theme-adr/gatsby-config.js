@@ -7,8 +7,11 @@ module.exports = ({
   feedOptions = defaultFeedOptions,
   siteMetadata = {},
   postCssOptions = {
-    postCssPlugins: [require('tailwindcss'), require('autoprefixer')],
-    cssLoaderOptions: {},
+    postCssPlugins: [
+      require('tailwindcss'),
+      require('autoprefixer'),
+      require('postcss-preset-env')({ stage: 2 }),
+    ],
   },
 }) => ({
   jsxRuntime: 'automatic',
@@ -25,7 +28,7 @@ module.exports = ({
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/logo.png',
+        icon: 'src/images/logo.svg',
       },
     },
     'gatsby-plugin-sharp',
