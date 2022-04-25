@@ -54,7 +54,7 @@ module.exports = {
       `,
       output: '/rss.xml',
       generator: 'Lullabot Gatsby Theme ADR',
-      title: 'All ARDs RSS feed',
+      title: 'All ADRs RSS feed',
     },
   ],
 };
