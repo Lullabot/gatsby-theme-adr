@@ -13,7 +13,11 @@
   ],
   "scripts": {
     "test": "/bin/true",
-    "test:ci": "/bin/true"
+    "test:ci": "/bin/true",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "telemetry:off": "gatsby telemetry --disable",
+    "postinstall": "npm run-script telemetry:off"
   },
   "dependencies": {
     "@formatjs/cli": "^4.8.3",
@@ -44,7 +48,6 @@
     "gatsby-transformer-sharp": "^4.12.1",
     "highlight.js": "^11.5.1",
     "postcss": "^8.4.12",
-    "postcss-preset-env": "^7.4.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",

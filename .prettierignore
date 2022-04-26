@@ -1,6 +1,4 @@
-*/public
-@*/*/public
-*/.cache
-@*/*/.cache
-*/node_modules
-@*/*/node_modules
+packages/**/public
+packages/**/.cache
+packages/**/node_modules
+/reports

@@ -77,14 +77,10 @@
     "jsx": "react"
   },
   "include": [
-    "@*/*/src/**/*.js",
-    "@*/*/src/**/*.ts",
-    "@*/*/src/**/*.jsx",
-    "@*/*/src/**/*.tsx",
-    "*/src/**/*.js",
-    "*/src/**/*.ts",
-    "*/src/**/*.jsx",
-    "*/src/**/*.tsx"
+    "packages/**/src/**/*.js",
+    "packages/**/src/**/*.ts",
+    "packages/**/src/**/*.jsx",
+    "packages/**/src/**/*.tsx"
   ],
   "exclude": [
     "*.svg",
@@ -92,13 +88,9 @@
     "*.css",
     "*.scss",
     "*.sass",
-    "@*/*/src/**/*.test.ts",
-    "@*/*/src/**/*.test.js",
-    "@*/*/src/**/*.spec.ts",
-    "@*/*/src/**/*.spec.js",
-    "*/src/**/*.test.ts",
-    "*/src/**/*.test.js",
-    "*/src/**/*.spec.ts",
-    "*/src/**/*.spec.js"
+    "packages/**/src/**/*.test.ts",
+    "packages/**/src/**/*.test.js",
+    "packages/**/src/**/*.spec.ts",
+    "packages/**/src/**/*.spec.js"
   ]
 }

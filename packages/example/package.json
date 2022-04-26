@@ -1,5 +1,5 @@
 {
-  "name": "adr-website-example",
+  "name": "example",
   "description": "Processes, designs, and tools our team has standardized on.",
   "version": "1.0.0",
   "private": true,

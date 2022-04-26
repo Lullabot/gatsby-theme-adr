@@ -4,22 +4,23 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace adr-website-example build",
-    "develop": "yarn workspace adr-website-example develop",
-    "start": "yarn workspace adr-website-example develop",
-    "serve": "yarn workspace adr-website-example serve",
-    "clean": "yarn workspace adr-website-example clean",
-    "lint": "eslint {**/*,*}.{js,ts,jsx,tsx,html}",
+    "build": "yarn workspace example build",
+    "develop": "yarn workspace example develop",
+    "start": "yarn workspace example develop",
+    "serve": "yarn workspace example serve",
+    "clean": "concurrently -c \"bgBlue,bgMagenta\" \"yarn workspace example clean\" \"yarn workspace @lullabot/gatsby-theme-adr clean\"",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx,html}\"",
     "lint:fix": "prettier --write \"{**/*,*}.{js,ts,jsx,tsx,json,md}\" && yarn lint --fix",
-    "lint:ci": "yarn lint -- -o reports/eslint/issues.json -f json",
+    "lint:ci": "yarn lint -o reports/eslint/issues.json -f json",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint"
   },
-  "workspaces": [
-    "@lullabot/gatsby-theme-adr",
-    "adr-website-example"
-  ],
-  "dependencies": {
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@semantic-release/changelog": "^6.0.1",
@@ -30,6 +31,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
+    "concurrently": "^7.1.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
