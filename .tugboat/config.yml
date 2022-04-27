@@ -1,0 +1,15 @@
+services:
+  apache:
+    image: tugboatqa/httpd:2.4
+    default: true
+    commands:
+      init:
+        - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+        - ln --symbolic --no-dereference --force "${TUGBOAT_ROOT}/packages/example/public" "${DOCROOT}"
+        - apt-get install -y nodejs
+        - npm install --global yarn
+      build:
+        - yarn install
+        - yarn telemetry:off
+        - rm --recursive --force "${TUGBOAT_ROOT}/packages/example/public"
+        - yarn build
