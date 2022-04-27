@@ -18,7 +18,7 @@ jobs:
       - name: Run Tests
         run: yarn test:ci
       - name: Compress
-        run: mkdir --parents dist; tar --create --gzip --verbose --directory=packages --exclude=node_modules --exclude=adr --exclude=tailwind.config.js --file dist/gatsby-theme-adr.tar.gz gatsby-theme-adr
+        run: mkdir --parents dist; tar --create --gzip --verbose --directory=packages --exclude=node_modules --exclude=adr --file dist/gatsby-theme-adr.tar.gz gatsby-theme-adr
       - name: Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
