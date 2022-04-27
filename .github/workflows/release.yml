@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install package dependencies
-        run: npm install
+        run: yarn install
       - name: Run Tests
-        run: npm test
+        run: yarn test:ci
       - name: Compress
         run: mkdir --parents dist; tar --create --gzip --verbose --directory=packages --exclude=node_modules --exclude=adr --exclude=tailwind.config.js --file dist/gatsby-theme-adr.tar.gz gatsby-theme-adr
       - name: Semantic Release

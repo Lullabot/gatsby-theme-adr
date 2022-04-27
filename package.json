@@ -9,6 +9,8 @@
     "start": "yarn workspace example develop",
     "serve": "yarn workspace example serve",
     "clean": "concurrently -c \"bgBlue,bgMagenta\" \"yarn workspace example clean\" \"yarn workspace @lullabot/gatsby-theme-adr clean\"",
+    "test": "yarn workspace @lullabot/gatsby-theme-adr test",
+    "test:ci": "yarn workspace @lullabot/gatsby-theme-adr test:ci",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx,html}\"",
     "lint:fix": "prettier --write \"{**/*,*}.{js,ts,jsx,tsx,json,md}\" && yarn lint --fix",
     "lint:ci": "yarn lint -o reports/eslint/issues.json -f json",
