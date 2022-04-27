@@ -7,6 +7,7 @@ services:
         - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
         - ln --symbolic --no-dereference --force "${TUGBOAT_ROOT}/packages/example/public" "${DOCROOT}"
         - apt-get install -y nodejs
+        - npm install --global yarn
       build:
         - yarn install
         - yarn telemetry:off
