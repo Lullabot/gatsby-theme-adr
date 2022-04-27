@@ -2,6 +2,10 @@ services:
   apache:
     image: tugboatqa/httpd:2.4
     default: true
+    urls:
+      - /
+      - /adrs
+      - /adr/20210608-record-architecture-decisions/
     commands:
       init:
         - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
