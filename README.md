@@ -98,3 +98,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+## 🔄 Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to set up a local environment to work on issues.
