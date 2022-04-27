@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: npm install
-      - run: npm test
-      - run: npm run-script lint:ci
+      - run: yarn install
+      - run: yarn test:ci
+      - run: yarn lint:ci
       - run: jq -s '[.[][]]' reports/eslint/*.json > reports/eslint/eslint-combined.json
         if: ${{ failure() }}
       - name: Annotate Code Linting Results

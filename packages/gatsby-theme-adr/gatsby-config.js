@@ -6,6 +6,9 @@ module.exports = ({
   lunrOptions = defaultLunrOptions,
   feedOptions = defaultFeedOptions,
   siteMetadata = {},
+  postCssOptions = {
+    postCssPlugins: [require('tailwindcss'), require('autoprefixer')],
+  },
 }) => ({
   jsxRuntime: 'automatic',
   siteMetadata,
@@ -13,12 +16,15 @@ module.exports = ({
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: postCssOptions,
+    },
     'gatsby-plugin-remove-generator',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/logo.png',
+        icon: 'src/images/logo.svg',
       },
     },
     'gatsby-plugin-sharp',

@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "description": "Processes, designs, and tools our team has standardized on.",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@lullabot/gatsby-theme-adr": "*",
+    "gatsby": "^4.12.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "scripts": {
+    "test": "/bin/true",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "telemetry:off": "gatsby telemetry --disable",
+    "postinstall": "npm run-script telemetry:off"
+  }
+}

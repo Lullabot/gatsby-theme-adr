@@ -1,3 +1,5 @@
 node_modules/
-/.cache/
-/public/
+.cache/
+/packages/*/public/
+/yarn-error.log
+/dist

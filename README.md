@@ -13,31 +13,31 @@
 
    Create the directory to hold your ADRs, and initialize the website.
 
-    ```shell
-    # Download the boilerplate project so we can tweak it.
-    npx degit github:e0ipso/adr-website-example#main docs
-    cd docs
-   
-    # Install the documentation site.
-    npm install
-    # Run the development server.
-    npm run-script develop
-    ```
+   ```shell
+   # Download the boilerplate project so we can tweak it.
+   npx degit github:e0ipso/adr-website-example#main docs
+   cd docs
+
+   # Install the documentation site.
+   npm install
+   # Run the development server.
+   npm run-script develop
+   ```
 
 2. **Change customize the Look & Feel**
 
-    * This project uses Gatsby. This means that you can override any or the
-      components here using a technique
-      called [component shadowing](https://www.gatsbyjs.com/blog/2019-04-29-component-shadowing/)
-      . The boilerplate you downloaded contains examples of that. See the
-      contents of the `src/@lullabot/gatsby-theme-adr` to change the copyright
-      information the menu title, etc.
+   - This project uses Gatsby. This means that you can override any or the
+     components here using a technique
+     called [component shadowing](https://www.gatsbyjs.com/blog/2019-04-29-component-shadowing/)
+     . The boilerplate you downloaded contains examples of that. See the
+     contents of the `src/@lullabot/gatsby-theme-adr` to change the copyright
+     information the menu title, etc.
 
-    * Additionally, you will need to change the images in `src/images` to
-      include the logo for your project.
+   - Additionally, you will need to change the images in `src/images` to
+     include the logo for your project.
 
-    * Finally, edit `gatsby.config.js` to remove references to "My Company" and
-      use your project's info instead.
+   - Finally, edit `gatsby.config.js` to remove references to "My Company" and
+     use your project's info instead.
 
 3. (Optional) **Move Tugboat integration to your project root**
 
@@ -48,9 +48,9 @@
    If you already use Tugboat adapt your project configuration to _add_ the
    service for the ADR website instead.
 
-    ```shell
-    mv .tugboat ../
-    ```
+   ```shell
+   mv .tugboat ../
+   ```
 
 4. **Open the code and start customizing!**
 
@@ -74,7 +74,7 @@ name: website
 on:
   push:
     # Update this to your branch name.
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   publish:
