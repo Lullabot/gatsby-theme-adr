@@ -19,8 +19,5 @@
     "clean": "gatsby clean",
     "telemetry:off": "gatsby telemetry --disable",
     "postinstall": "npm run-script telemetry:off"
-  },
-  "resolutions": {
-    "gatsby": "4.12.1"
   }
 }
