@@ -11,5 +11,5 @@ services:
       build:
         - yarn install
         - yarn telemetry:off
-        - rm --recursive --force "${TUGBOAT_ROOT}/public"
+        - rm --recursive --force "${TUGBOAT_ROOT}/packages/example/public"
         - yarn build
