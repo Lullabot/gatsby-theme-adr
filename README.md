@@ -7,7 +7,7 @@
   Gatsby Theme ADR
 </h1>
 
-Visit [live demo](https://main-6tkhgrnroe6hhbnhw96k7zaeo8qu1pem.tugboat.qa/). <small>Live demo via <a href="https://main-6tkhgrnroe6hhbnhw96k7zaeo8qu1pem.tugboat.qa/">Tugboat</a></small>.
+Visit [live demo](https://lullabot.github.io/gatsby-theme-adr).
 
 ## 🚀 Add an ADR website to your software project
 
