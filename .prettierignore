@@ -2,3 +2,4 @@ packages/**/public
 packages/**/.cache
 packages/**/node_modules
 /reports
+/dist
