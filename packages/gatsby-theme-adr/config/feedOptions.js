@@ -16,7 +16,7 @@ module.exports = {
         return allMdx.edges.map((edge) => {
           const siteUrl = site.siteMetadata.siteUrl;
           return {
-            title: edge.node.frontmatter.pagetitle,
+            title: edge.node.frontmatter.title,
             description: edge.node.frontmatter.deck,
             guid: `${siteUrl}${edge.node.fields.slug}`,
             custom_elements: [
