@@ -28,7 +28,7 @@ Visit [live demo](https://lullabot.github.io/gatsby-theme-adr).
 
 2. **Change customize the Look & Feel**
 
-   - This project uses Gatsby. This means that you can override any or the
+   - This project uses Gatsby. This means that you can override any of the
      components here using a technique
      called [component shadowing](https://www.gatsbyjs.com/blog/2019-04-29-component-shadowing/)
      . The boilerplate you downloaded contains examples of that. See the
