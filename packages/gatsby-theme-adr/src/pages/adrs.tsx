@@ -15,7 +15,7 @@ export type AdrListingData = {
       tags?: string[];
       title: string;
       status: 'accepted' | 'deprecated';
-      deck?: string;
+      context?: string;
     };
   };
 };
@@ -51,7 +51,7 @@ const AdrListing = (props: AdrListingType) => {
             (
               {
                 node: {
-                  frontmatter: { date, deciders, tags, title, status, deck },
+                  frontmatter: { date, deciders, tags, title, status, context },
                   fields: { slug },
                 },
               },
@@ -112,7 +112,7 @@ const AdrListing = (props: AdrListingType) => {
                     </div>
                   </div>
                   <div className="text-gray-500 text-sm mt-3 font-serif prose">
-                    <ReactMarkdown>{deck || ''}</ReactMarkdown>
+                    <ReactMarkdown>{context || ''}</ReactMarkdown>
                   </div>
                 </div>
               </li>
@@ -138,7 +138,7 @@ export const query = graphql`
             tags
             deciders
             status
-            deck
+            context
           }
           fields {
             slug

@@ -1,17 +1,17 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 
-type PageTitleProps = PropsWithChildren<{ preTitle: string; deck?: string }>;
+type PageTitleProps = PropsWithChildren<{ preTitle: string; context?: string }>;
 const PageTitle = ({
   children,
   preTitle = '',
-  deck = '',
+  context = '',
 }: PageTitleProps): ReactElement => {
   return (
     <>
       <Helmet>
         <title>{children}</title>
-        <meta name="description" content={deck} />
+        <meta name="description" content={context} />
       </Helmet>
       <div className="px-10 mx-auto 2xl:max-w-6xl">
         <h1 id="primary-heading">
@@ -26,9 +26,9 @@ const PageTitle = ({
             {children}
           </span>
         </h1>
-        {deck ? (
+        {context ? (
           <p className="mt-8 text-2xl text-center text-gray-500 leading-8 font-serif">
-            {deck}
+            {context}
           </p>
         ) : (
           <></>

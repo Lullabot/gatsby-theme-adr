@@ -9,7 +9,7 @@ const lunrOptions = {
             id
             frontmatter {
               title
-              deck
+              context
             }
             fields {
               slug
@@ -20,13 +20,13 @@ const lunrOptions = {
       }
     }
   `,
-  index: ['title', 'deck', 'body'],
-  store: ['title', 'slug', 'deck'],
+  index: ['title', 'context', 'body'],
+  store: ['title', 'slug', 'context'],
   normalizer: ({ data }) =>
     data.allMdx.edges.map(({ node }) => ({
       id: node.id,
       title: node.frontmatter.title,
-      deck: node.frontmatter.deck,
+      context: node.frontmatter.context,
       slug: node.fields.slug,
       body: node.rawBody,
     })),
