@@ -1,5 +1,8 @@
 {
   "name": "gatsby-theme-adr-development",
+  "description": "Gatsby theme for architecture.lullabot.com",
+  "repository": "github:lullabot/gatsby-theme-adr",
+  "bugs": "https://github.com/Lullabot/gatsby-theme-adr/issues",
   "private": true,
   "version": "0.0.1",
   "license": "MIT",
