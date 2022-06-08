@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-adr-development",
-  "description": "Gatsby theme for architecture.lullabot.com",
+  "description": "Gatsby theme for a site to list ADRs",
   "repository": "github:lullabot/gatsby-theme-adr",
   "bugs": "https://github.com/Lullabot/gatsby-theme-adr/issues",
   "private": true,
