@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---gatsby-theme-adr-src-pages-adrs-tsx",
+    "path": "/adrs/",
+    "result": {"data":{"allMdx":{"edges":[{"node":{"frontmatter":{"date":"2021-06-08","title":"Record architecture decisions","tags":["architecture","documentation"],"deciders":["Eleanor Rigby","Lucy Sky","Julia Oceanchild"],"status":"accepted","deck":"We need to record the architectural decisions made on this project."},"fields":{"slug":"/adr/20210608-record-architecture-decisions/"}}}]}},"pageContext":{}},
+    "staticQueryHashes": ["2791864276","3863699657","738257826"]}
