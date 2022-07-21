@@ -5,13 +5,13 @@ import ReactMarkdown from 'react-markdown';
 
 export type SearchResultProps = Readonly<{
   title: string;
-  deck: string;
+  context: string;
   slug: string;
 }>;
 
 const SearchResult = ({
   title,
-  deck,
+  context,
   slug,
 }: SearchResultProps): ReactElement => (
   <li className="py-4 flex">
@@ -20,7 +20,7 @@ const SearchResult = ({
         <h3 className="text-sm font-medium text-gray-900">{title}</h3>
       </Link>
       <div className="text-sm text-gray-500 prose">
-        <ReactMarkdown>{deck}</ReactMarkdown>
+        <ReactMarkdown>{context}</ReactMarkdown>
       </div>
     </div>
   </li>

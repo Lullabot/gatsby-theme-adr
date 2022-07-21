@@ -18,7 +18,7 @@ export type AdrFrontmatter = {
   status: 'accepted' | 'deprecated';
   tags?: string[];
   title: string;
-  deck?: string;
+  context?: string;
 };
 
 type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
@@ -30,7 +30,7 @@ type ContextType = {
 const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
   const { uri, data } = props;
   const {
-    frontmatter: { date, deciders, status, tags, title, deck },
+    frontmatter: { date, deciders, status, tags, title, context },
     body,
   } = data.mdx;
   const { id } = props.pageContext;
@@ -50,9 +50,9 @@ const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
           aria-labelledby="primary-heading"
           className="relative flex-1 flex flex-col bg-white font-serif"
         >
-          {deck ? (
+          {context ? (
             <div className="text-3xl italic mt-8 mx-auto prose">
-              <ReactMarkdown>{deck}</ReactMarkdown>
+              <ReactMarkdown>{context}</ReactMarkdown>
             </div>
           ) : (
             <></>
@@ -117,7 +117,7 @@ export const query = graphql`
         status
         tags
         title
-        deck
+        context
       }
       body
     }

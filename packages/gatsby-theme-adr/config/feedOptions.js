@@ -17,7 +17,7 @@ module.exports = {
           const siteUrl = site.siteMetadata.siteUrl;
           return {
             title: edge.node.frontmatter.title,
-            description: edge.node.frontmatter.deck,
+            description: edge.node.frontmatter.context,
             guid: `${siteUrl}${edge.node.fields.slug}`,
             custom_elements: [
               {
@@ -40,7 +40,7 @@ module.exports = {
               node {
                 frontmatter {
                   title
-                  deck
+                  context
                   date(formatString: "ddd, D MMM YYYY h:mm:ss ZZ")
                   tags
                 }

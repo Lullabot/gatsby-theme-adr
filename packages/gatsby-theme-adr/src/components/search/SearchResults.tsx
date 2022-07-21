@@ -10,8 +10,8 @@ const SearchResults = ({ results }: SearchResultsProps): ReactElement => {
   }
   return (
     <ul className="divide-y divide-gray-200">
-      {results.map(({ title, deck, slug }, i) => (
-        <SearchResult key={i} title={title} deck={deck} slug={slug} />
+      {results.map(({ title, context, slug }, i) => (
+        <SearchResult key={i} title={title} context={context} slug={slug} />
       ))}
     </ul>
   );

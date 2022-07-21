@@ -28,7 +28,7 @@ const HomePage = (props: PropsWithChildren<PageProps>) => {
   return (
     <Layout {...props}>
       <PageTitle
-        deck="Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project."
+        context="Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project."
         preTitle="ADR"
       >
         My Company&apos;s Architecture Decision Records
