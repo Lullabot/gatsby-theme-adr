@@ -5,6 +5,7 @@ import AdrStats from '../components/AdrStats';
 import Layout from '../components/layout/Layout';
 import StatusBadge from '../components/StatusBadge';
 import ReactMarkdown from 'react-markdown';
+import PageTitle from '../components/PageTitle';
 
 export type AdrListingData = {
   node: {
@@ -39,9 +40,9 @@ const AdrListing = (props: AdrListingType) => {
   } = props;
   return (
     <Layout {...props}>
-      <h1 className="text-4xl font-bold mx-6 my-3 text-center">
+      <PageTitle preTitle="">
         {tag ? `ADRs tagged "${tag}"` : 'All ADRs'}
-      </h1>
+      </PageTitle>
       <div className="max-w-4xl mx-auto">
         <AdrStats adrs={allAdrs} to={tag ? `/adrs/${tag}` : '/adrs'} />
       </div>
