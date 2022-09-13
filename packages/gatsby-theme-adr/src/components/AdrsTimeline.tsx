@@ -5,7 +5,13 @@ import TagList from './TagList';
 
 const query = graphql`
   query LatestAdrs {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }, limit: 8) {
+    allMdx(
+      sort: {
+        order: [DESC, ASC]
+        fields: [frontmatter___date, frontmatter___title]
+      }
+      limit: 8
+    ) {
       edges {
         node {
           frontmatter {
