@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/outline';
+import { Link } from 'gatsby';
 
 type PageBreadcrumbsProps = { uri: string; title: string };
 const PageBreadcrumbs = ({
@@ -28,13 +29,13 @@ const PageBreadcrumbs = ({
                 className="flex-shrink-0 h-5 w-5 text-charcoal-700"
                 aria-hidden="true"
               />
-              <a
-                href={page.href}
+              <Link
+                to={page.href}
                 className="ml-4 text-sm font-medium text-charcoal-700 hover:text-charcoal-800"
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}
