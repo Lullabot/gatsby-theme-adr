@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 type AdrToc = {
   id: string;
@@ -13,12 +13,12 @@ function TocLink({
 }: LinkParts & { depth: number }) {
   return (
     <li>
-      <a
-        href={url}
+      <Link
+        to={url}
         className="text-blue-500 flex items-center ml-2 mt-1 px-2 py-1 text-sm font-medium hover:text-blue-800 hover:underline"
       >
         <span className="truncate">{title}</span>
-      </a>
+      </Link>
       {items && items.length ? (
         <ul className={`ml-${depth * 2} mt-0.5`}>
           {items.map((item, index) => (
