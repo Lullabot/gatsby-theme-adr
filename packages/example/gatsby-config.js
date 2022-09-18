@@ -4,6 +4,7 @@ module.exports = {
       resolve: '@lullabot/gatsby-theme-adr',
       options: {
         contentPath: 'adrs',
+        trailingSlash: 'always',
         siteMetadata: {
           siteUrl: 'https://architecture.my-company.com',
           title: "My Company's Architecture Decision Records",
