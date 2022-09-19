@@ -12,6 +12,7 @@ module.exports = ({
 }) => ({
   jsxRuntime: 'automatic',
   siteMetadata,
+  trailingSlash: 'always',
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
