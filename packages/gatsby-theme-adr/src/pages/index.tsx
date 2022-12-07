@@ -6,6 +6,19 @@ import Layout from '../components/layout/Layout';
 import { graphql, PageProps, useStaticQuery } from 'gatsby';
 import AdrStats, { AdrStatsProps } from '../components/AdrStats';
 
+export const Head = ({
+  children,
+  deck,
+}: {
+  children: React.ReactNode;
+  deck: string;
+}) => (
+  <>
+    <title>{children}</title>
+    <meta name="description" content={deck} />
+  </>
+);
+
 const HomePage = (props: PropsWithChildren<PageProps>) => {
   const {
     allMdx: { edges: adrs },

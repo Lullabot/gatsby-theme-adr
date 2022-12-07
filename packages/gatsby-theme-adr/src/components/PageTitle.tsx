@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Helmet } from 'react-helmet';
+import { Head } from '../pages/index';
 
 type PageTitleProps = PropsWithChildren<{ preTitle: string; deck?: string }>;
 const PageTitle = ({
@@ -9,10 +9,8 @@ const PageTitle = ({
 }: PageTitleProps): ReactElement => {
   return (
     <>
-      <Helmet>
-        <title>{children}</title>
-        <meta name="description" content={deck} />
-      </Helmet>
+      {/* eslint-disable-next-line react/no-children-prop */}
+      <Head children={children} deck={deck} />
       <div className="px-10 mx-auto 2xl:max-w-6xl">
         <h1 id="primary-heading">
           {preTitle ? (
