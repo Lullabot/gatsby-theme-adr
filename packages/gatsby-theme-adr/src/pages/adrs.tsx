@@ -128,7 +128,7 @@ const AdrListing = (props: AdrListingType) => {
 export const query = graphql`
   query AllAdrs($tag: String) {
     allMdx(
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { eq: $tag } } }
     ) {
       edges {

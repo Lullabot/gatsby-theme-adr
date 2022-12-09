@@ -7,19 +7,25 @@ const query = graphql`
     allMdx {
       edges {
         next {
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
         }
         previous {
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
         }
         node {
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
