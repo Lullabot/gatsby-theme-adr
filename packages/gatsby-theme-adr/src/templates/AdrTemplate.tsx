@@ -8,7 +8,6 @@ import Layout from '../components/layout/Layout';
 import { graphql, PageProps } from 'gatsby';
 import StatusBadge from '../components/StatusBadge';
 import Pager from '../components/Pager';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import ReactMarkdown from 'react-markdown';
 import { highlightCode } from '../util/highlight';
 
@@ -64,7 +63,7 @@ const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
               </div>
             </div>
             <div className="mt-8 lg:mt-0 prose lg:prose-xl prose-a:text-blue-600 prose-headings:font-sans prose-code:before:content-none prose-code:after:content-none">
-              <MDXRenderer>{body}</MDXRenderer>
+              {props.children}
             </div>
           </div>
           <Pager uri={uri} />

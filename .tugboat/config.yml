@@ -8,7 +8,7 @@ services:
       - /adr/20210608-record-architecture-decisions/
     commands:
       init:
-        - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+        - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
         - ln --symbolic --no-dereference --force "${TUGBOAT_ROOT}/packages/example/public" "${DOCROOT}"
         - apt-get install -y nodejs
         - npm install --global yarn

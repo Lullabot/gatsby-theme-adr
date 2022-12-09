@@ -14,7 +14,7 @@ const lunrOptions = {
             fields {
               slug
             }
-            rawBody
+            body
           }
         }
       }
@@ -28,7 +28,7 @@ const lunrOptions = {
       title: node.frontmatter.title,
       deck: node.frontmatter.deck,
       slug: node.fields.slug,
-      body: node.rawBody,
+      body: node.body,
     })),
 };
 
