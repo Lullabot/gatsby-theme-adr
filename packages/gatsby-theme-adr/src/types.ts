@@ -1,18 +1,16 @@
-export type SeoData = {
-  defaultTitle: string;
-  defaultDescription: string;
-};
 type IconLink = {
   name: string;
   uri: string;
   iconName?: string;
 };
-export type IconLinks = Array<IconLink>;
+export type IconLinks = IconLink[];
 
 export type SiteMetadata = {
   siteUrl: string;
   title: string;
-  seo: SeoData;
+  image?: string;
+  description?: string;
+  twitterUsername?: string;
   menuLinks: IconLinks;
   socialLinks: IconLinks;
 };

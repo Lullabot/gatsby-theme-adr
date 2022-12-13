@@ -1,35 +1,40 @@
 import React, { PropsWithChildren } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { SiteMetadata } from '../types';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const SEO = ({ children }: PropsWithChildren) => {
+export type SEOProps = PropsWithChildren<{
+  title?: string;
+  description?: string;
+  pathname?: string;
+}>;
+
+const SEO = ({ title, description, pathname, children }: SEOProps) => {
   const {
-    site: {
-      siteMetadata: { seo },
-    },
-  } = useStaticQuery<{ site: { siteMetadata: Partial<SiteMetadata> } }>(
-    graphql`
-      {
-        site {
-          siteMetadata {
-            seo {
-              defaultTitle
-              defaultDescription
-            }
-          }
-        }
-      }
-    `,
-  );
+    siteUrl,
+    title: defaultTitle,
+    description: defaultDescription,
+    twitterUsername,
+    image,
+  } = useSiteMetadata();
+
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: image ? `${siteUrl}${image}` : '',
+    url: `${siteUrl}${pathname || ``}`,
+    twitterUsername,
+  };
+
   return (
     <>
-      <title id="page-title">{seo?.defaultTitle}</title>
-      <meta
-        id="page-description"
-        name="description"
-        content={seo?.defaultDescription}
-      />
-      {/* Ensure pages using this component can override the default values. */}
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
       {children}
     </>
   );

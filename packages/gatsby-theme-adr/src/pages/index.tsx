@@ -13,7 +13,7 @@ export const Head = () => <SEO />;
 const HomePage = (props: PropsWithChildren<PageProps>) => {
   const {
     site: {
-      siteMetadata: { seo },
+      siteMetadata: { title, description },
     },
     allMdx: { edges: adrs },
   } = useStaticQuery<{
@@ -23,10 +23,8 @@ const HomePage = (props: PropsWithChildren<PageProps>) => {
     query {
       site {
         siteMetadata {
-          seo {
-            defaultTitle
-            defaultDescription
-          }
+          title
+          description
         }
       }
       allMdx {
@@ -43,8 +41,8 @@ const HomePage = (props: PropsWithChildren<PageProps>) => {
   `);
   return (
     <Layout {...props}>
-      <PageTitle deck={seo?.defaultDescription} preTitle="ADR">
-        {seo?.defaultTitle}
+      <PageTitle deck={description} preTitle="ADR">
+        {title}
       </PageTitle>
       <section
         aria-labelledby="primary-heading"

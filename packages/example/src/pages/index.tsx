@@ -15,10 +15,8 @@ export const query = graphql`
   query PageQuery {
     site {
       siteMetadata {
-        seo {
-          defaultTitle
-          defaultDescription
-        }
+        title
+        description
       }
     }
     allMdx {
@@ -47,13 +45,13 @@ const HomePage = (
   const {
     allMdx: { edges: adrs },
     site: {
-      siteMetadata: { seo },
+      siteMetadata: { title, description },
     },
   } = props.data;
   return (
     <Layout {...props}>
-      <PageTitle deck={seo?.defaultDescription} preTitle="ADR">
-        {seo?.defaultTitle}
+      <PageTitle deck={description} preTitle="ADR">
+        {title}
       </PageTitle>
       <section
         aria-labelledby="primary-heading"

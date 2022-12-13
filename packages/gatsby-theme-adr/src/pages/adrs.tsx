@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { graphql, Link, PageProps } from 'gatsby';
+import { graphql, HeadProps, Link, PageProps } from 'gatsby';
 import { CalendarIcon, TagIcon, UsersIcon } from '@heroicons/react/solid';
 import AdrStats from '../components/AdrStats';
 import Layout from '../components/layout/Layout';
@@ -8,13 +8,9 @@ import ReactMarkdown from 'react-markdown';
 import PageTitle from '../components/PageTitle';
 import SEO from '../components/SEO';
 
-type HeadProps = PropsWithChildren<
-  PageProps<object, { tag: string | undefined }>
->;
-export const Head = ({ pageContext: { tag } }: HeadProps) => (
-  <SEO>
-    <title id="page-title">{tag ? `ADRs tagged "${tag}"` : 'All ADRs'}</title>
-  </SEO>
+type HeadDataProps = HeadProps<object, { tag: string | undefined }>;
+export const Head = ({ pageContext: { tag } }: HeadDataProps) => (
+  <SEO title={tag ? `ADRs tagged "${tag}"` : 'All ADRs'} />
 );
 
 export type AdrListingData = {
