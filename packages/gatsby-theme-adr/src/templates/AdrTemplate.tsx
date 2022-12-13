@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 import PageTitle from '../components/PageTitle';
 import PageBreadcrumbs from '../components/PageBreadcrumbs';
 import AdrToc from '../components/AdrToc';
@@ -10,6 +10,7 @@ import StatusBadge from '../components/StatusBadge';
 import Pager from '../components/Pager';
 import ReactMarkdown from 'react-markdown';
 import { highlightCode } from '../util/highlight';
+import SEO from '../components/SEO';
 
 export type AdrFrontmatter = {
   date: string;
@@ -21,6 +22,19 @@ export type AdrFrontmatter = {
 };
 
 type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
+type HeadProps = PropsWithChildren<PageProps<DataType>>;
+
+export const Head = (props: HeadProps) => (
+  <SEO>
+    <title id="page-title">{props.data.mdx.frontmatter.title}</title>
+    <meta
+      id="page-description"
+      name="description"
+      content={props.data.mdx.frontmatter.deck}
+    />
+  </SEO>
+);
+
 type ContextType = {
   id: string;
   nextAdrId: string;

@@ -6,6 +6,16 @@ import Layout from '../components/layout/Layout';
 import StatusBadge from '../components/StatusBadge';
 import ReactMarkdown from 'react-markdown';
 import PageTitle from '../components/PageTitle';
+import SEO from '../components/SEO';
+
+type HeadProps = PropsWithChildren<
+  PageProps<object, { tag: string | undefined }>
+>;
+export const Head = ({ pageContext: { tag } }: HeadProps) => (
+  <SEO>
+    <title id="page-title">{tag ? `ADRs tagged "${tag}"` : 'All ADRs'}</title>
+  </SEO>
+);
 
 export type AdrListingData = {
   node: {

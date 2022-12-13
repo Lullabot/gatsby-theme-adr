@@ -15,7 +15,6 @@ module.exports = ({
   trailingSlash: 'always',
   plugins: [
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-postcss',

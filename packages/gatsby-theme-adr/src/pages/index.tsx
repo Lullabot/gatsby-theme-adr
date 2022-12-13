@@ -5,12 +5,30 @@ import PageTitle from '../components/PageTitle';
 import Layout from '../components/layout/Layout';
 import { graphql, PageProps, useStaticQuery } from 'gatsby';
 import AdrStats, { AdrStatsProps } from '../components/AdrStats';
+import SEO from '../components/SEO';
+import { SiteMetadata } from '../types';
+
+export const Head = () => <SEO />;
 
 const HomePage = (props: PropsWithChildren<PageProps>) => {
   const {
+    site: {
+      siteMetadata: { seo },
+    },
     allMdx: { edges: adrs },
-  } = useStaticQuery<{ allMdx: { edges: AdrStatsProps['adrs'] } }>(graphql`
+  } = useStaticQuery<{
+    allMdx: { edges: AdrStatsProps['adrs'] };
+    site: { siteMetadata: Partial<SiteMetadata> };
+  }>(graphql`
     query {
+      site {
+        siteMetadata {
+          seo {
+            defaultTitle
+            defaultDescription
+          }
+        }
+      }
       allMdx {
         edges {
           node {
@@ -25,11 +43,8 @@ const HomePage = (props: PropsWithChildren<PageProps>) => {
   `);
   return (
     <Layout {...props}>
-      <PageTitle
-        deck="Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project."
-        preTitle="ADR"
-      >
-        My Company&apos;s Architecture Decision Records
+      <PageTitle deck={seo?.defaultDescription} preTitle="ADR">
+        {seo?.defaultTitle}
       </PageTitle>
       <section
         aria-labelledby="primary-heading"

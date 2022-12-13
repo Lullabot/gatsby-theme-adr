@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
 
-import { MenuLink } from './Layout';
 import { Link } from 'gatsby';
 import { SocialIcon } from 'react-social-icons';
 import Copyright from './Copyright';
+import { IconLinks } from '../../types';
 
-type FooterProps = { links: MenuLink[]; socialLinks: MenuLink[] };
+type FooterProps = { links: IconLinks; socialLinks: IconLinks };
 const Footer = ({ links, socialLinks }: FooterProps): ReactElement => {
   return (
     <footer className="bg-white border-t border-gray-200">

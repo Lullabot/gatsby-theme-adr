@@ -8,6 +8,11 @@ module.exports = {
         siteMetadata: {
           siteUrl: 'https://architecture.my-company.com',
           title: "My Company's Architecture Decision Records",
+          seo: {
+            defaultTitle: "My Company's Architecture Decision Records",
+            defaultDescription:
+              'Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project.',
+          },
           menuLinks: [
             { name: 'Home', uri: '/', iconName: 'HomeIcon' },
             { name: 'All ADRs', uri: '/adrs', iconName: 'CollectionIcon' },
