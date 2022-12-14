@@ -10,7 +10,6 @@ export type SiteMetadata = {
   title: string;
   image?: string;
   description?: string;
-  twitterUsername?: string;
   menuLinks: IconLinks;
   socialLinks: IconLinks;
 };

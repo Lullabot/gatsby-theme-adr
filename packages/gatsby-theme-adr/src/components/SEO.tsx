@@ -11,7 +11,6 @@ const SEO = ({ title, description, children }: SEOProps) => {
     siteUrl,
     title: defaultTitle,
     description: defaultDescription,
-    twitterUsername,
     image,
   } = useSiteMetadata();
 
@@ -19,7 +18,6 @@ const SEO = ({ title, description, children }: SEOProps) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: image ? `${siteUrl}${image}` : '',
-    twitterUsername,
   };
 
   return (
