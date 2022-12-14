@@ -5,11 +5,12 @@ import AdrToc from '../components/AdrToc';
 import { CalendarIcon, TagIcon, UsersIcon } from '@heroicons/react/solid';
 import TagList from '../components/TagList';
 import Layout from '../components/layout/Layout';
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import StatusBadge from '../components/StatusBadge';
 import Pager from '../components/Pager';
 import ReactMarkdown from 'react-markdown';
 import { highlightCode } from '../util/highlight';
+import SEO from '../components/SEO';
 
 export type AdrFrontmatter = {
   date: string;
@@ -20,12 +21,25 @@ export type AdrFrontmatter = {
   deck?: string;
 };
 
-type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
 type ContextType = {
+  title: string;
+  deck: string;
   id: string;
   nextAdrId: string;
   previousAdrId: string;
 };
+type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
+
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { title, deck },
+    },
+  },
+}: HeadProps<DataType, ContextType>) => (
+  <SEO title={title} description={deck} />
+);
+
 const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
   const { uri, data } = props;
   const {
@@ -51,7 +65,7 @@ const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
         >
           {deck ? (
             <div className="text-3xl italic mt-8 mx-auto prose">
-              <ReactMarkdown>{deck}</ReactMarkdown>
+              <ReactMarkdown>{deck || ''}</ReactMarkdown>
             </div>
           ) : (
             <></>

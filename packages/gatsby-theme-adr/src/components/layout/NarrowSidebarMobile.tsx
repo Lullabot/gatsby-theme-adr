@@ -1,17 +1,20 @@
 import React, { Fragment, ReactElement } from 'react';
 
-import { MenuLink } from './Layout';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 
 import NarrowSidebarMobileLogo from './NarrowSidebarMobileLogo';
+import { IconLinks } from '../../types';
 
 type NarrowSidebarMobileProps = {
   show: boolean;
   onClose: (value: ((prevState: boolean) => boolean) | boolean) => void;
   onClick: () => void;
-  menuLinks: MenuLink[];
-  callbackfn: ({ name, uri, iconName }: MenuLink, index: number) => JSX.Element;
+  menuLinks: IconLinks;
+  callbackfn: (
+    { name, uri, iconName }: IconLinks[number],
+    index: number,
+  ) => JSX.Element;
 };
 const NarrowSidebarMobile = ({
   show,

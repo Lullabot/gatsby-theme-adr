@@ -3,35 +3,55 @@ import React, { PropsWithChildren } from 'react';
 import PageTitle from '@lullabot/gatsby-theme-adr/src/components/PageTitle';
 
 import Layout from '@lullabot/gatsby-theme-adr/src/components/layout/Layout';
-import { graphql, PageProps, useStaticQuery } from 'gatsby';
+import { SiteMetadata } from '@lullabot/gatsby-theme-adr/src/types';
+
+import { graphql, PageProps } from 'gatsby';
 import AdrStats, {
   AdrStatsProps,
 } from '@lullabot/gatsby-theme-adr/src/components/AdrStats';
+import SEO from '@lullabot/gatsby-theme-adr/src/components/SEO';
 
-const HomePage = (props: PropsWithChildren<PageProps>) => {
-  const {
-    allMdx: { edges: adrs },
-  } = useStaticQuery<{ allMdx: { edges: AdrStatsProps['adrs'] } }>(graphql`
-    query {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              tags
-              deciders
-            }
+export const query = graphql`
+  query PageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            tags
+            deciders
           }
         }
       }
     }
-  `);
+  }
+`;
+
+export const Head = () => <SEO />;
+
+const HomePage = (
+  props: PropsWithChildren<
+    PageProps<{
+      allMdx: { edges: AdrStatsProps['adrs'] };
+      site: { siteMetadata: Partial<SiteMetadata> };
+    }>
+  >,
+) => {
+  const {
+    allMdx: { edges: adrs },
+    site: {
+      siteMetadata: { title, description },
+    },
+  } = props.data;
   return (
     <Layout {...props}>
-      <PageTitle
-        deck="Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project."
-        preTitle="ADR"
-      >
-        My Company&apos;s Architecture Decision Records
+      <PageTitle deck={description} preTitle="ADR">
+        {title}
       </PageTitle>
       <section
         aria-labelledby="primary-heading"
