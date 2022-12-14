@@ -71,9 +71,6 @@ module.exports = ({
             },
           },
         ],
-        defaultLayouts: {
-          default: require.resolve('./src/templates/AdrTemplate.tsx'),
-        },
       },
     },
     {
