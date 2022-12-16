@@ -14,7 +14,7 @@
     "test": "/bin/true",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "telemetry:off": "gatsby telemetry --disable",
