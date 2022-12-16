@@ -20,7 +20,6 @@ module.exports = ({
       resolve: 'gatsby-plugin-postcss',
       options: postCssOptions,
     },
-    'gatsby-plugin-remove-generator',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
