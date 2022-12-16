@@ -6888,11 +6888,6 @@ gatsby-plugin-postcss@^6.2.0:
     "@babel/runtime" "^7.15.4"
     postcss-loader "^7.0.1"
 
-gatsby-plugin-remove-generator@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-generator/-/gatsby-plugin-remove-generator-1.2.0.tgz#28037a7c8bbdf2303d7011389ecf7b56d0eabe92"
-  integrity sha512-49s6QSVQ7Q7o1xBgboawlscfbRXbhhzCn2UqxlyyiVTeRZ/F3AyghOV7Yrmz/u4+7ubOXXzdgl40I0qim4EPyw==
-
 gatsby-plugin-sharp@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.2.0.tgz#fd954f7c63f99e63197dd4794558bc3af742618b"
