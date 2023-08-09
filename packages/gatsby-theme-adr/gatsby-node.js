@@ -145,3 +145,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createAdrDetail(createPage, graphql, reporter),
   ]);
 };
+
+// Define SiteMetadata type schema to allow for optional socialLinks.
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type Site {
+      siteMetadata: SiteMetadata!
+    }
+
+    type SiteMetadata {
+      siteUrl: String!
+      title: String!
+      description: String!
+      image: String!
+      menuLinks: [IconLink!]!
+      socialLinks: [IconLink!]
+    }
+
+    type IconLink {
+      name: String!
+      uri: String!
+      iconName: String
+    }
+  `);
+};

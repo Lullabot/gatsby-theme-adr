@@ -26,7 +26,7 @@ const Footer = ({ links, socialLinks }: FooterProps): ReactElement => {
           ))}
         </nav>
         <div className="xl:ml-6 ml-3 hidden sm:flex justify-center space-x-6">
-          {socialLinks.map(({ name, uri, iconName }) => {
+          {socialLinks?.map(({ name, uri, iconName }) => {
             return (
               <span key={name} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{name}</span>
