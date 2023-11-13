@@ -68,7 +68,7 @@ differ.
 
 Here is an example that assumes you use _GitHub Actions_ for CI and _GitHub Pages_ to host the static site.
 
-Add a workflow for your repository in `.github/worflows/gh-pages.yml` with the
+Add a workflow for your repository in `.github/workflows/gh-pages.yml` with the
 following contents:
 
 ```yaml
