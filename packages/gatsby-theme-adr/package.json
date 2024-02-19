@@ -36,7 +36,7 @@
     "gatsby-plugin-mdx": "^5.3.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-postcss": "^6.2.0",
-    "gatsby-plugin-sharp": "^5.2.0",
+    "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-sitemap": "^6.2.0",
     "gatsby-redirect-from": "^1.0.0",
     "gatsby-remark-autolink-headers": "^6.2.0",
