@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
+  <a href="https://www.gatsbyjs.com/">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
+
 <h1 align="center">
   Gatsby Theme ADR
 </h1>
@@ -67,7 +68,7 @@ differ.
 
 Here is an example that assumes you use _GitHub Actions_ for CI and _GitHub Pages_ to host the static site.
 
-Add a workflow for your repository in `.github/worflows/gh-pages.yml` with the
+Add a workflow for your repository in `.github/workflows/gh-pages.yml` with the
 following contents:
 
 ```yaml

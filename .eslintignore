@@ -5,6 +5,7 @@ packages/**/node_modules
 packages/**/gatsby-browser.js
 packages/**/gatsby-config.js
 packages/**/gatsby-node.js
+packages/**/gatsby-ssr.js
 packages/**/__gatsby-node.js
 packages/**/postcss.config.js
 packages/**/tailwind.config.js

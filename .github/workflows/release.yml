@@ -8,11 +8,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18
       - name: Install package dependencies
         run: yarn install
       - name: Run Tests
@@ -21,7 +20,7 @@ jobs:
         run: mkdir --parents dist; tar --create --gzip --verbose --directory=packages --exclude=node_modules --exclude=adr --file dist/gatsby-theme-adr.tar.gz gatsby-theme-adr
       - name: Semantic Release
         if: ${{ success() }}
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

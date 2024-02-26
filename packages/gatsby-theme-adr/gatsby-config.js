@@ -12,15 +12,14 @@ module.exports = ({
 }) => ({
   jsxRuntime: 'automatic',
   siteMetadata,
+  trailingSlash: 'always',
   plugins: [
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-postcss',
       options: postCssOptions,
     },
-    'gatsby-plugin-remove-generator',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -71,9 +70,6 @@ module.exports = ({
             },
           },
         ],
-        defaultLayouts: {
-          default: require.resolve('./src/templates/AdrTemplate.tsx'),
-        },
       },
     },
     {

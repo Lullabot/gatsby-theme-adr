@@ -1,10 +1,17 @@
 import React, { PropsWithChildren } from 'react';
-import { graphql, Link, PageProps } from 'gatsby';
+import { graphql, HeadProps, Link, PageProps } from 'gatsby';
 import { CalendarIcon, TagIcon, UsersIcon } from '@heroicons/react/solid';
 import AdrStats from '../components/AdrStats';
 import Layout from '../components/layout/Layout';
 import StatusBadge from '../components/StatusBadge';
 import ReactMarkdown from 'react-markdown';
+import PageTitle from '../components/PageTitle';
+import SEO from '../components/SEO';
+
+type HeadDataProps = HeadProps<object, { tag: string | undefined }>;
+export const Head = ({ pageContext: { tag } }: HeadDataProps) => (
+  <SEO title={tag ? `ADRs tagged "${tag}"` : 'All ADRs'} />
+);
 
 export type AdrListingData = {
   node: {
@@ -39,9 +46,9 @@ const AdrListing = (props: AdrListingType) => {
   } = props;
   return (
     <Layout {...props}>
-      <h1 className="text-4xl font-bold mx-6 my-3 text-center">
+      <PageTitle preTitle="">
         {tag ? `ADRs tagged "${tag}"` : 'All ADRs'}
-      </h1>
+      </PageTitle>
       <div className="max-w-4xl mx-auto">
         <AdrStats adrs={allAdrs} to={tag ? `/adrs/${tag}` : '/adrs'} />
       </div>
@@ -127,7 +134,7 @@ const AdrListing = (props: AdrListingType) => {
 export const query = graphql`
   query AllAdrs($tag: String) {
     allMdx(
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { eq: $tag } } }
     ) {
       edges {

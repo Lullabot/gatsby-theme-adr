@@ -5,12 +5,12 @@ import AdrToc from '../components/AdrToc';
 import { CalendarIcon, TagIcon, UsersIcon } from '@heroicons/react/solid';
 import TagList from '../components/TagList';
 import Layout from '../components/layout/Layout';
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import StatusBadge from '../components/StatusBadge';
 import Pager from '../components/Pager';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import ReactMarkdown from 'react-markdown';
 import { highlightCode } from '../util/highlight';
+import SEO from '../components/SEO';
 
 export type AdrFrontmatter = {
   date: string;
@@ -21,12 +21,25 @@ export type AdrFrontmatter = {
   context?: string;
 };
 
-type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
 type ContextType = {
+  title: string;
+  deck: string;
   id: string;
   nextAdrId: string;
   previousAdrId: string;
 };
+type DataType = { mdx: { frontmatter: AdrFrontmatter; body: string } };
+
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { title, deck },
+    },
+  },
+}: HeadProps<DataType, ContextType>) => (
+  <SEO title={title} description={deck} />
+);
+
 const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
   const { uri, data } = props;
   const {
@@ -52,7 +65,7 @@ const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
         >
           {context ? (
             <div className="text-3xl italic mt-8 mx-auto prose">
-              <ReactMarkdown>{context}</ReactMarkdown>
+              <ReactMarkdown>{context || ''}</ReactMarkdown>
             </div>
           ) : (
             <></>
@@ -64,7 +77,7 @@ const AdrTemplate = (props: PageProps<DataType, ContextType>): ReactElement => {
               </div>
             </div>
             <div className="mt-8 lg:mt-0 prose lg:prose-xl prose-a:text-blue-600 prose-headings:font-sans prose-code:before:content-none prose-code:after:content-none">
-              <MDXRenderer>{body}</MDXRenderer>
+              {props.children}
             </div>
           </div>
           <Pager uri={uri} />

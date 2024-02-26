@@ -17,6 +17,7 @@ import NarrowSidebar from './NarrowSidebar';
 import NarrowSidebarMobile from './NarrowSidebarMobile';
 import Footer from './Footer';
 import SearchOverlay from '../search/SearchOverlay';
+import { SiteMetadata } from '../../types';
 
 const query = graphql`
   query MenuLinks {
@@ -37,12 +38,6 @@ const query = graphql`
   }
 `;
 
-export type MenuLink = {
-  name: string;
-  uri: string;
-  iconName?: string;
-};
-
 const icons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   HomeIcon,
   CollectionIcon,
@@ -56,7 +51,10 @@ const Layout = ({ children, uri: pageUri }: LayoutProps): ReactElement => {
     },
   } = useStaticQuery<{
     site: {
-      siteMetadata: { menuLinks: MenuLink[]; socialLinks: MenuLink[] };
+      siteMetadata: {
+        menuLinks: SiteMetadata['menuLinks'];
+        socialLinks: SiteMetadata['socialLinks'];
+      };
     };
   }>(query);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -56,12 +56,15 @@ const createAdrDetail = async (createPage, graphql, reporter) => {
   // Get all markdown blog posts sorted by date
   const result = await graphql(`
     {
-      allMdx(sort: { fields: frontmatter___date }) {
+      allMdx(sort: { frontmatter: { date: ASC } }) {
         edges {
           node {
             id
             fields {
               slug
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -89,6 +92,7 @@ const createAdrDetail = async (createPage, graphql, reporter) => {
         {
           node: {
             fields: { slug },
+            internal: { contentFilePath },
             id,
           },
         },
@@ -100,7 +104,7 @@ const createAdrDetail = async (createPage, graphql, reporter) => {
 
         createPage({
           path: slug,
-          component: adrTemplate,
+          component: `${adrTemplate}?__contentFilePath=${contentFilePath}`,
           context: {
             id,
             previousAdrId,
@@ -124,12 +128,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'Mdx') {
-    const name = 'slug';
-    const value = `/adr/${createFilePath({ node, getNode }).replace(
-      /^\//,
-      '',
-    )}`;
-    createNodeField({ name, node, value });
+    createNodeField({
+      node,
+      name: 'slug',
+      value: `/adr/${createFilePath({ node, getNode }).replace(/^\//, '')}`,
+    });
   }
 };
 
@@ -141,4 +144,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createTagFilteredListings(createPage, graphql, reporter),
     createAdrDetail(createPage, graphql, reporter),
   ]);
+};
+
+// Define SiteMetadata type schema to allow for optional socialLinks.
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type Site {
+      siteMetadata: SiteMetadata!
+    }
+
+    type SiteMetadata {
+      siteUrl: String!
+      title: String!
+      description: String!
+      image: String!
+      menuLinks: [IconLink!]!
+      socialLinks: [IconLink!]
+    }
+
+    type IconLink {
+      name: String!
+      uri: String!
+      iconName: String
+    }
+  `);
 };

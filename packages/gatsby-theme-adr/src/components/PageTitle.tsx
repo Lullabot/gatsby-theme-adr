@@ -1,5 +1,4 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Helmet } from 'react-helmet';
 
 type PageTitleProps = PropsWithChildren<{ preTitle: string; context?: string }>;
 const PageTitle = ({
@@ -9,10 +8,6 @@ const PageTitle = ({
 }: PageTitleProps): ReactElement => {
   return (
     <>
-      <Helmet>
-        <title>{children}</title>
-        <meta name="description" content={context} />
-      </Helmet>
       <div className="px-10 mx-auto 2xl:max-w-6xl">
         <h1 id="primary-heading">
           {preTitle ? (

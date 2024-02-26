@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import { MenuLink } from './Layout';
 import NarrowSidebarLogo from './NarrowSidebarLogo';
 import NarrowSidebarTitle from './NarrowSidebarTitle';
 import SidebarLink from './SidebarLink';
+import { IconLinks } from '../../types';
 
 type NarrowSidebarProps = {
-  menuLinks: MenuLink[];
+  menuLinks: IconLinks;
   pageUri: string;
 };
 

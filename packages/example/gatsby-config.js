@@ -1,12 +1,17 @@
 module.exports = {
+  pathPrefix: '/gatsby-theme-adr',
   plugins: [
     {
       resolve: '@lullabot/gatsby-theme-adr',
       options: {
         contentPath: 'adrs',
+        trailingSlash: 'always',
         siteMetadata: {
           siteUrl: 'https://architecture.my-company.com',
           title: "My Company's Architecture Decision Records",
+          description:
+            'Welcome to the architecture knowledge base of My Company. You will find here all the Architecture Decision Records (ADR) of the project.',
+          image: '/icons/icon-192x192.png',
           menuLinks: [
             { name: 'Home', uri: '/', iconName: 'HomeIcon' },
             { name: 'All ADRs', uri: '/adrs', iconName: 'CollectionIcon' },
